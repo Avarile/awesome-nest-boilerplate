@@ -3,7 +3,6 @@ import {
   IsEmail,
   IsNotEmpty,
   IsOptional,
-  IsPhoneNumber,
   IsString,
   MinLength,
 } from 'class-validator';
@@ -38,7 +37,6 @@ export class UserRegisterDto {
 
   @ApiProperty()
   @Column()
-  @IsPhoneNumber()
   @IsOptional()
   phone: string;
 }

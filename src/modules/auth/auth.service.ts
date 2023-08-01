@@ -33,6 +33,9 @@ export class AuthService {
     });
   }
 
+  /***
+   * login with email and password
+   */
   async validateUser(userLoginDto: UserLoginDto): Promise<UserEntity> {
     const user = await this.userService.findOne({
       email: userLoginDto.email,
@@ -49,4 +52,17 @@ export class AuthService {
 
     return user!;
   }
+
+  /***
+   * login with google
+   */
+  // validateGoogleUser(response: unknown) {
+  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   if (!response.user) {
+  //     throw new UserNotFoundException();
+  //   } else {
+  //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //     return response.user;
+  //   }
+  // }
 }
